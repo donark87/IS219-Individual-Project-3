@@ -14,11 +14,11 @@ app.get('/api/v1/cities', function(req, res) {
         port: '32000',
         user: 'root',
         password: 'root',
-        database: 'citiesData'
+        database: 'oscarData'
     });
     connection.connect();
 
-    connection.query('SELECT * FROM tblCitiesImport', function (err, rows, fields) {
+    connection.query('SELECT * FROM tblOscar_age_male', function (err, rows, fields) {
         if (err) throw err;
         res.json({ "data": rows});
     })
